@@ -1,0 +1,26 @@
+<header class="fixed-top navbar-dark bg-dark">
+  <div class="container">
+    <nav class="navbar navbar-expand-sm">
+      <%= link_to "Members Only", root_path, id: "logo", class: "navbar-brand" %>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><%= link_to "Home", root_path, class: "nav-link" %></li>
+        <% if logged_in? %>
+          <li class="nav-item"><%= link_to "Users", users_path, class: "nav-link" %></li>
+          <li class="nav-item dropdown">
+            <a id= "navbarDropdown" class="nav-link dropdown-toggle" 
+               href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Account <b class="caret"></b>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <%= link_to "Profile", '#', class: "dropdown-item" %>
+              <div class="dropdown-divider"></div>
+              <%= link_to "Log out", logout_path, class: "dropdown-item", method: :delete %>
+            </div>
+          </li>
+        <% else %>
+          <li class="nav-item"><%= link_to "Log in", login_path, class: "nav-link" %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>
