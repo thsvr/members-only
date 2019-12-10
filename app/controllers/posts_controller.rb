@@ -9,7 +9,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find_by(params[:id])
+    @post = Post.find(params[:format])
   end
 
   def new
@@ -17,12 +17,12 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = current_user.posts.build(post_params)
+    @post = current_user.posts.new(post_params)
     if @post.save
       flash[:success] = 'Post created!'
       redirect_to root_path
     else
-      render 'index'
+      render 'new'
     end
   end
 

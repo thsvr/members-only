@@ -3,12 +3,22 @@
 <ul>
   <% @posts.each do |post| %>
     <li>
-      <b><%= link_to post.title, posts_show_path(post) %></b>
+      <%= link_to post.title, posts_show_path(post), class: "post_title" %>
+      <p class = "pl-2">
+      <i>by: 
+      <%  if logged_in? %> 
+        <%= User.find(post.user_id).name %>
+      <% else %>
+        Anonymous
+      <% end %>
+      </p>
+      </i>
     </li>
   <% end %>
 </ul>
 
-<%  if logged_in? %>
-  <%= link_to "Create a New Post", posts_new_path, class: "new_post" %>
-<% end %>
-
+<div>
+  <%  if logged_in? %>
+    <%= link_to "Create a New Post", posts_new_path, class: "new_post" %>
+  <% end %>
+</div>

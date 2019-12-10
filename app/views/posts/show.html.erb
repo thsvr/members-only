@@ -1,5 +1,12 @@
-Title: <%=  @post.title %> <br>
+<h1><%=  @post.title %></h1> <br>
+<h2>Author:
 <%  if logged_in? %>
-  Author: <%= User.find(@post.user_id).name %><br>
+  <%= User.find(@post.user_id).name %>
+<% else %>
+  Anonymous
 <% end %>
-Post: <%=  @post.content %> <br>
+</h2>
+
+<p>
+<%=  @post.content %> <br>
+</p>
