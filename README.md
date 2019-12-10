@@ -4,7 +4,6 @@
 
 ![screenshot](./app_screenshot.jpg)
 
-Additional description about the project and its features.
 
 ## Built With
 
@@ -12,21 +11,13 @@ Additional description about the project and its features.
 - Ruby on Rails, Bootstrap
 - Gems: bcrypt
 
-## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
-To get a local copy up and running follow these simple example steps.
-
 ### Requirements
 
 * Ruby 2.6.3
 
 ### Installation
 
-* Download repository to your local machine, then run `bundle install`.
+* Download repository to your local machine, then run `bundle install` and run `rails db:migrate`.
 
 ## Authors
 
