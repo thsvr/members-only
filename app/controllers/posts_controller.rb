@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  include SessionsHelper
   before_action :logged_in?, only: [:new, :create]
 
   def index
