@@ -1,11 +1,14 @@
-<%  @posts.each do |post| %>
-    Title: <%=  post.title %> <br>
-    Post: <%=  post.content %> <br>
+<h1>All Posts</h1>
 
-    <%  if logged_in? %>
-    <% user = User.find(post.user_id) %>
-        Autor: <%= user.name %> <br><hr>
-    <% end %>
+<ul>
+  <% @posts.each do |post| %>
+    <li>
+      <b><%= link_to post.title, posts_show_path(post) %></b>
+    </li>
+  <% end %>
+</ul>
 
+<%  if logged_in? %>
+  <%= link_to "Create a New Post", posts_new_path, class: "new_post" %>
 <% end %>
 
