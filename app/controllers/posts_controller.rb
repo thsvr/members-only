@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class PostsController < ApplicationController
   include SessionsHelper
-  before_action :logged_in?, only: [:new, :create]
+  before_action :logged_in?, only: %i[new create]
 
   def index
     @posts = Post.all
@@ -13,21 +15,18 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-      flash[:success] = "Post created!"
+      flash[:success] = 'Post created!'
       redirect_to root_path
     else
       render 'index'
     end
   end
 
-  def destroy
-  end
+  def destroy; end
 
   private
 
-    def post_params
-      params.require(:post).permit(:title, :content)
-    end
-
-  
+  def post_params
+    params.require(:post).permit(:title, :content)
+  end
 end
