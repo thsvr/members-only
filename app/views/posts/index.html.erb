@@ -7,7 +7,7 @@
       <p class = "pl-2">
       <i>by: 
       <%  if logged_in? %> 
-        <%= User.find(post.user_id).name %>
+        <%= post.user.name %>
       <% else %>
         Anonymous
       <% end %>
