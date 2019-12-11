@@ -29,6 +29,7 @@ module SessionsHelper
   # Returns the current logged-in user (if any).
   def current_user
     return unless user_id = cookies.signed[:user_id]
+    
     user = User.find_by(id: user_id)
     @current_user = user if user &.authentic_token?(cookies[:remember_token])
   end
