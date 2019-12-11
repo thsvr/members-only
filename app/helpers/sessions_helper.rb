@@ -15,7 +15,7 @@ module SessionsHelper
     cookies.delete(:remember_token)
     @current_user = nil
   end
-  
+
   # Returns true if the user is logged in, false otherwise.
   def logged_in?
     !current_user.nil?
@@ -30,9 +30,7 @@ module SessionsHelper
   def current_user
     if user_id = cookies.signed[:user_id]
       user = User.find_by(id: user_id)
-      if user &.authentic_token?(cookies[:remember_token])
-        @current_user = user
-      end
+      @current_user = user if user &.authentic_token?(cookies[:remember_token])
     end
   end
 end
