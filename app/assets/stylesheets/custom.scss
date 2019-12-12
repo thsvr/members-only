@@ -1,0 +1,107 @@
+/* mixins, variables, etc. */
+
+$state-danger-text: #f0140c;
+$gray: #555;
+$gray-light: #777;
+
+/* universal */
+
+// *:hover {border: 1px solid $light-blue;}
+
+.bold{font-weight: bold;font-size: 1.1em;}
+.inline{display: inline;}
+
+
+.errors{
+  color: $state-danger-text;
+  font-weight: bold;
+}
+
+body {
+  padding-top: 100px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: $gray-light;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+/* header */
+
+.p-10{
+  padding: 10px 0 10px 0;
+}
+.m-8{
+  margin: 8px;
+}
+.vert-midle{
+  display: inline-block;
+  vertical-align: middle;
+  float: none;
+}
+
+#logo_tag{
+  max-width: 50px;
+}
+#logo {
+  float: left;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: lowercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+/* Posts */
+.post_title{
+  font-weight: 600;
+  font-size: 1.5em;
+  letter-spacing: -2px;
+}
+
+/* Debug related css */
+
+.debug_dump {
+  color: $gray-light
+}

@@ -1,0 +1,12 @@
+<h1><%=  @post.title %></h1> <br>
+<h2>Author:
+<%  if logged_in? %>
+  <%= @post.user.name %>
+<% else %>
+  Anonymous
+<% end %>
+</h2>
+
+<p>
+<%=  @post.content %> <br>
+</p>
